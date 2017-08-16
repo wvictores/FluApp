@@ -30,8 +30,8 @@ angular.module("FluApp").controller("FluController", ["$scope", "$http", functio
 
     $scope.items = [];
     $scope.getItems = function() {
-        $http.get('http://api.flutrack.org/?limit=10').then(function(data) {
-                $scope.items = data;
+        $http.get('/api/flu').then(function(response) {
+                $scope.items = response.data;
             })
     };
 }]);
